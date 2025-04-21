@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../public/fonts/Rubik/Rubik-VariableFont_wght.ttf");
+  font-style: normal;
+}
+
+:root {
+  --font-family: "Rubik", sans-serif;
+  --blue-600: hsl(231, 69%, 60%);
+  --blue-950: hsl(229, 31%, 21%);
+  --black: #333;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-family);
+    color: var(--black);
+    font-size: 16px;
+  }
+}
+
+@layer components {
+  .overlay-bg {
+    background: var(--blue-950);
+    opacity: 0.85;
+  }
+
+  .cs-container {
+    @apply mx-auto w-[83%] max-w-[400px] md:max-w-[990px];
+  }
+
+  .cs-button {
+    @apply rounded-md border-2 border-solid px-6 py-3 font-medium shadow-md transition-colors duration-300;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 0;
+    height: 0;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
